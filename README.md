@@ -42,9 +42,9 @@ instruction(s)?) or instruction success (should we display a message etc.)
 or other events as such.
 
 
-See lib/fhibox/jeeves for **Jeeves**
-See src/fhibox/nestor for **Nestor**
-See src/fhibox/nestor/application/instructions for the instruction workflow mini-framework
+-> See lib/fhibox/jeeves for **Jeeves** <br />
+-> See src/fhibox/nestor for **Nestor** <br />
+-> See src/fhibox/nestor/application/instructions for the instruction workflow mini-framework <br />
 
 
 The code is documented as much as possible, and figuring out how to use **Jeeves** should  
