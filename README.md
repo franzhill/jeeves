@@ -2,7 +2,7 @@
 
 ## Intro
 
-**Jeeves** is a simple, php5-based lightweight framework built upon some bricks like Symfony's Console,
+**Jeeves** is a simple, php-based lightweight framework built upon some bricks like Symfony's Console,
 designed to speed up and industrialize development of command-line applications
 (i.e. command line apps with subset of commands with some common options and arguments, 
 some common checks and behaviours etc.).
@@ -42,10 +42,16 @@ instruction(s)?) or instruction success (should we display a message etc.)
 or other events as such.
 
 
+## Code
+
 -> See lib/fhibox/jeeves for **Jeeves** <br />
 -> See src/fhibox/nestor for **Nestor** <br />
 -> See src/fhibox/nestor/application/instructions for the instruction workflow mini-framework <br />
 
+Php version : **Jeeves** and **Nestor** were developped against PHP 5.3. They however seem to be working fine as-is under PHP 7.
+
+
+# Documentation
 
 The code is documented as much as possible, and figuring out how to use **Jeeves** should  
 hopefully be understandable from perusing/reading the code comments.
