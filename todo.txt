@@ -1,0 +1,85 @@
+***************************************************************************************************
+* CHANGELOG / TODO LOG
+***************************************************************************************************
+
+
+
+
+
+====================================================================================================
+TODO
+(improvements)
+
+
+- Command Deploy :
+  - When command fails, identify if:
+       - things will be ok if 
+       - if a manual intervention is required
+    and display this to user
+  - Handle several files
+      E.g.: $ Nestor deploy -R fhibox1 -r 50822 /my/www/fic1 /my/www/fic2
+  - Handle several files with different revisions
+      E.g.: $ Nestor deploy -e prod -R fhibox1 -m 'message' /my/www/fic1:50822 /my/www/fic2:50814
+  - Deploy from description file
+      E.g.: $ Nestor deploy -f ./mep_projet_20789.txt
+
+  - Log all infos about deploy, in DB
+  - Test mode
+  - After deploy, run monitoring script to check that everything is OK
+  - Before deploy, run unit/integration tests if they exist and only deploy if they pass
+  - See command help
+
+- Command compare :
+  - Handle case when target file is a dir
+  - See command help
+
+- Command more (previously seefile):
+  - connect to AWS to know the private IPs of all instances in ASG (=> install AWS CLI)
+  - add an option for grep (instead of piping to grep)
+  
+- Command rollback : rollback a deploy that's been done (finished and successfu)
+  E.g. undo the last deploy
+  - todo completely
+
+- All commands :
+  - i18n
+  - Non interactive mode
+  - Create a metacommand class (stack of commandes) that itself behaves like a Command
+    that can be executed, rollbacked (would call rollback on every subcommand of the stack)
+  - Rollback : improve
+     - Every command (ex. deploy) (which is a succession of shell commands), 
+       should be atomic and should be rollback-able
+       => define as a metacommand with a command stack, each having a rollback (see above)
+     - Rollback should be a command in and out of itself. A rollback may indeed fail e and 
+	   we'd want the user to know about that
+
+  - In all commands use printf rather than echo (more portable)
+  - Allow user to input multiple values on prompt, when option value is not passed, and when option accepts multiple values (see OptionOrArgument->handleDefault())
+  - Help formatting looks like sh*t when help message
+    - on one line and too long
+    - on several lines
+
+- Instruction.php
+  not systematically display message - sometimes Failure can be normal
+
+---------------------------------------------------------------
+DONE
+
+- xxxxx
+- xxxxxxxxx
+- xxxxxxxxxxx
+  
+
+====================================================================================================
+PROJECT INFO
+
+Composer update :
+
+Francois hill@Fhibox-PC-2 /cygdrive/c/Users/Francois hill/Documents/WORK/FRONT/my/work/scripts_2/lib
+$ php composer.phar update
+
+PhpUnit :
+Since we're working to be compatible with the version of PHP installed on our servers (PHP 5.3 ...)
+we have to use a compatible version of PHPUnit.
+=> downloading the latest phar from PHPUnit's website won't do it.
+=> we'll get a specific version through Composer.
