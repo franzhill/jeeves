@@ -1,5 +1,7 @@
 # jeeves
 
+## Intro
+
 **Jeeves** is a simple, php5-based lightweight framework built upon some bricks like Symfony's Console,
 designed to speed up and industrialize development of command-line applications
 (i.e. command line apps with subset of commands with some common options and arguments, 
@@ -49,3 +51,87 @@ The code is documented as much as possible, and figuring out how to use **Jeeves
 hopefully be understandable from perusing/reading the code comments.
 This doesn't replace a good manual for sure, but be reassured, it's on its way.
 
+
+## Examples
+
+<pre>
+francois.hill@xxx $ Nestor
+Nestor version 0.9
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help            Display this help message
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi            Force ANSI output
+      --no-ansi         Disable ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Available commands:
+  compare          Compare a same source file between two environments
+  deploy           Deploys a/several file/directory/project into the specified environment
+  deploy_log       Display production deployments logs
+  deploy_rollback  Cancels last production deployment(s)
+  help             Displays help for a command
+  list             Lists commands
+  more             Display a file (source or log) from the production environment
+
+
+
+francois.hill@xxx $ Nestor compare -h
+Usage:
+  compare [options] [--] <envs> <source-file> (<source-file>)...
+
+Arguments:
+  envs                       Environments, example : DEV:PROD
+  source-file                Target (file or directory)
+
+Options:
+  -N, --test-mode            aka dry-run
+  -w, --virtual-mode         Vitual mode, i.e. only print out/describe commands that would be executed (but don't really execute them)
+  -t, --verbosity-transmit   Transmit verbosity.
+                             Chosen verbosity (via options -v, -vv ...) will not be applied
+                             directly to this command but passed down onto the subcommands that it calls.
+                             (E.g. a Nestor command might call shell commands. In this case verbosity will be
+                             applied to these shell commands, wherever possible, and not to the Nestor command
+                             itself.)
+
+  -d, --diff-tool=DIFF-TOOL  Diff tool to be used. Possible values:
+                             - vimdiff : the best visual tool, with side to side comparison
+                               and highlighted differences. However, exiting is a bit tricky
+                               (to exit, type the following sequence twice: <ESC>:q! )
+                             - sdiff
+                             - diff
+  -R, --rep=REP              VCS where source files lie:
+                             - fhibox1   (source files...)
+                             - XYZ       (certifications file...)
+                             - constants (const files)
+  -h, --help                 Display this help message
+  -q, --quiet                Do not output any message
+  -V, --version              Display this application version
+      --ansi                 Force ANSI output
+      --no-ansi              Disable ANSI output
+  -n, --no-interaction       Do not ask any interactive question
+  -v|vv|vvv, --verbose       Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Help:
+
+ Compare a same source file between two different environments
+
+ Nota: if comparend versions are identical, then comparison tools used by this
+ command may not show screen or message.
+
+ Examples:
+ ---------
+ $ Nestor compare -d sdiff -R fhibox1 dev:prod /my/www/.htaccess
+ $ Nestor compare -d diff  -R fhibox1 dev:staging /my/repos/fhibox1/trunk/product_X/clients/marks_and_spenders/custom/templates_html/index.html
+
+ Troubleshooting:
+ ----------------
+ - If nothing is shown on output of this command, please check under which user you are running.
+ - There may be some issues with vimdiff under user fhibox...
+
+</pre>
