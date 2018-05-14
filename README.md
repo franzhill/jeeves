@@ -28,7 +28,7 @@ to a specific setup and needs -however nonetheless instructive-, serving
 commands like "deploy to production" or "compare this version of that file 
 against what we have on that environement" ...
 
-**Nestor** consequently does not  purport to offer a workable let alone 
+**Nestor** consequently does not purport to offer a workable let alone 
 state-of-the-art opeations/maintenance framework or anything else
 (there are many tools out there to suit every kind of setup)
 but simply tries to offer an an example of how **Jeeves** can be used to 
@@ -55,7 +55,7 @@ Php version : **Jeeves** and **Nestor** were developped against PHP 5.3. They ho
 
 The code is documented as much as possible, and figuring out how to use **Jeeves** should  
 hopefully be understandable from perusing/reading the code comments.
-This doesn't replace a good manual for sure, but be reassured, it's on its way.
+This doesn't replace a good manual for sure, but be reassured, that's on its way.
 
 
 ## Examples
