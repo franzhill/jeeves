@@ -2,10 +2,10 @@
 
 ## Intro
 
-**Jeeves** is a simple, php-based lightweight framework built upon some bricks like Symfony's Console,
+**Jeeves** is a simple, php-based lightweight framework built upon bricks like Symfony's Console,
 designed to speed up and industrialize development of command-line applications
-(i.e. command line apps with subset of commands with some common options and arguments, 
-some common checks and behaviours etc.).
+(i.e. command line apps with a subset of commands with ovelapping common options and arguments, 
+common checks and behaviours etc.).
 
 Its main intents are:
  - ease of expansion (adding new subcommands, options etc.)
